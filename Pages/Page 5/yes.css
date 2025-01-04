@@ -18,9 +18,12 @@
     overflow: hidden ;
 }
 
-img{
+img {
     z-index: 1000;
     padding-right: 5rem;
+    width: 50%; /* Alternativamente, use '50px' ou outro valor fixo */
+    max-width: 50%; /* Garante que ela não ultrapasse metade do tamanho original */
+    height: auto;
 }
 
 h1{

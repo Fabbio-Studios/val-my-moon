@@ -1,51 +1,101 @@
-*{
-	margin: 0px;
-	padding: 0px;
+* {
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
-	font-family: dubai;
-}
-section{
+	font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+	background-color: #121212; /* Cor de fundo escura para mais contraste */
+	color: #fff; /* Cor do texto em branco */
+	height: 100vh;
+	overflow: hidden;
+  }
+  
+  section {
 	position: relative;
 	min-height: 100vh;
-	background: #000;
+	background-color: #212121; /* Fundo mais suave para não sobrecarregar os olhos */
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-section h2{
+	flex-direction: column;
+  }
+  
+  section h2 {
 	color: #fff;
-	font-size: 5em;
-	cursor: default;
-}
-
-section h2 span{
-    color: rgb(240, 99, 99);
-}
-
-section .btn{
-    margin: 25rem 10rem 0rem 0;
-    font-size: 30px;
-}
-
-.light{
+	font-size: 3.5rem; /* Reduzido para não sobrecarregar em telas pequenas */
+	text-align: center;
+	margin-bottom: 2rem;
+	font-weight: bold;
+  }
+  
+  section h2 span {
+	color: #f44336; /* Cor mais vibrante para o destaque */
+  }
+  
+  section .btn {
+	font-size: 1.5rem;
+	padding: 15px 25px;
+	background-color: #4caf50; /* Botão verde agradável */
+	color: #fff;
+	border: 2px solid #4caf50;
+	border-radius: 50px;
+	transition: background-color 0.3s, transform 0.3s ease;
+  }
+  
+  section .btn:hover {
+	background-color: #388e3c;
+	transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+  }
+  
+  .light {
 	position: fixed;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
-	background: radial-gradient(circle at var(--x) var(--y) , transparent 10%, rgba(0,0,0,0.95) 20%);
-}
-
-.watermark {
-    opacity: 0.5;
-    color: rgb(243, 214, 214);
-    position: fixed;
-    top: 95%;
-    left: 47%;
-}
-
-.watermark a{
-    text-decoration: none;
-    color: rgb(243, 214, 214);
-}
+	background: radial-gradient(circle at var(--x) var(--y), transparent 10%, rgba(0, 0, 0, 0.8) 20%);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+	section h2 {
+	  font-size: 2.5rem; /* Ajuste para telas médias */
+	}
+  
+	section .btn {
+	  font-size: 1.25rem;
+	  padding: 12px 20px; /* Ajuste no botão para telas menores */
+	}
+  }
+  
+  @media (max-width: 480px) {
+	section h2 {
+	  font-size: 2rem; /* Reduzido ainda mais em telas muito pequenas */
+	  margin-bottom: 1rem;
+	}
+  
+	section .btn {
+	  width: 80%;
+	  font-size: 1.2rem;
+	  padding: 12px;
+	}
+  }
+  
+  .watermark {
+	opacity: 0.3;
+	color: #f1f1f1;
+	position: fixed;
+	top: 95%;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.9rem;
+  }
+  
+  .watermark a {
+	text-decoration: none;
+	color: #f1f1f1;
+  }
+  

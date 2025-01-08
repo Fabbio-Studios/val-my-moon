@@ -1,52 +1,53 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 
-.container
-{
+.container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    display:flex ;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #e80202;
-    overflow: hidden ;
+    overflow: hidden;
 }
 
 img {
     z-index: 1000;
-    padding-right: 5rem;
-    width: 50%; /* Alternativamente, use '50px' ou outro valor fixo */
-    max-width: 50%; /* Garante que ela não ultrapasse metade do tamanho original */
+    width: 80%; /* Ajustado para que a imagem ocupe 80% da largura da tela */
+    max-width: 300px; /* Limita o tamanho máximo da imagem */
     height: auto;
+    margin-bottom: 2rem; /* Espaço entre a imagem e o texto */
 }
 
-h1{
+h1 {
     color: aliceblue;
     text-align: center;
-    font-size: 4em;
+    font-size: 2.5rem; /* Ajustado para ser responsivo */
     z-index: 1000;
     font-family: "Love Ya Like A Sister", cursive;
     font-weight: 400;
     font-style: normal;
+    margin-top: 0;
 }
 
-
-.heart{
+.heart {
     position: absolute;
     width: 40px;
     height: 40px;
     background: #e80202;
     transform: rotate(45deg);
-    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2) ;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
+    animation: heartAnimation 1s infinite alternate;
 }
 
-.heart:before{
+.heart:before {
     content: '';
     position: absolute;
     top: -50%;
@@ -55,30 +56,63 @@ h1{
     height: 100%;
     background: #e80202;
     border-radius: 50%;
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1) ;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.heart:after{
+.heart:after {
     content: '';
     position: absolute;
     top: 0;
     left: -50%;
     width: 100%;
     height: 100%;
-    background: #e80202 ;
+    background: #e80202;
     border-radius: 50%;
-    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.1) ;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Animação para o coração */
+@keyframes heartAnimation {
+    0% {
+        transform: scale(1) rotate(45deg);
+    }
+    100% {
+        transform: scale(1.2) rotate(45deg);
+    }
 }
 
 .watermark {
     opacity: 0.5;
-    color: BLACK;
+    color: black;
     position: fixed;
     top: 95%;
     left: 45%;
 }
 
-a{
+/* Ajustes responsivos para telas pequenas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Menor tamanho de fonte em telas pequenas */
+    }
+
+    img {
+        width: 80%; /* Ajuste da imagem para tela menor */
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Fontes ainda menores em telas muito pequenas */
+    }
+
+    img {
+        width: 80%;
+        max-width: 200px; /* Ajuste maior para telas muito pequenas */
+    }
+}
+
+a {
     text-decoration: none;
     color: black;
 }

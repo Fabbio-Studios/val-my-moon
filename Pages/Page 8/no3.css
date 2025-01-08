@@ -1,43 +1,46 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background: #110515;
-	height: 100vh;
+    background: #110515; /* Fundo escuro, ajustado para maior contraste */
+    height: 100vh;
     overflow: hidden;
-    /* background-image: url('\\Assets\\wall2.jpg');
-    background-size: cover; */
+    color: #fff;
 }
 
-.circle{
+/* Círculos animados */
+.circle {
     position: absolute;
     bottom: 0;
     width: 20px;
     aspect-ratio: 1/1;
     background: rgb(249, 206, 247);
-    box-shadow: 0 0 10px rgb(230, 0, 255), 0 0 20px rgb(218, 27, 221),0 0 30px rgb(216, 34, 244),0 0 40px rgb(209, 110, 228),0 0 50px;
+    box-shadow: 0 0 10px rgb(230, 0, 255), 0 0 20px rgb(218, 27, 221),
+                0 0 30px rgb(216, 34, 244), 0 0 40px rgb(209, 110, 228),
+                0 0 50px;
     border-radius: 30%;
     animation: animate 5s linear forwards;
 }
 
-@keyframes animate{
-    0%{
+@keyframes animate {
+    0% {
         transform: translateY(0) rotate(-25deg);
         opacity: 1;
     }
-    50%{
+    50% {
         opacity: 1;
     }
-    100%{
+    100% {
         transform: translateY(-100vh) rotate(25deg);
         opacity: 0;
     }
 }
 
-.circle::before{
+.circle::before {
     content: '';
     position: absolute;
     top: 100%;
@@ -47,25 +50,29 @@ body {
     opacity: 0.5;
 }
 
-h1{  
+/* Título */
+h1 {
     margin: 5rem 0 0;
     padding-bottom: 0;
     display: flex;
     justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: whitesmoke;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
-.red{
+.red {
     color: red;
     font-size: 3rem;
     font-family: cursive;
 }
 
-img{
-    margin-top:0;
+/* Imagem */
+img {
+    margin-top: 0;
     padding-top: 1rem;
-    height: 500px;
+    height: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -73,15 +80,17 @@ img{
     z-index: 100;
 }
 
+/* Botões */
 .buttons {
     display: flex;
     justify-content: center;
-    margin-top: 29rem;
+    margin-top: 25rem;
     padding-top: 2rem;
-    gap: 12rem;
+    gap: 5rem;
+    flex-wrap: wrap; /* Adiciona flex-wrap para os botões se ajustarem em telas menores */
 }
 
-.btn{
+.btn {
     display: inline-block;
     position: relative;
     top: calc(100% - 10rem);
@@ -99,31 +108,76 @@ img{
     z-index: 1000;
 }
 
-#yes{
+#yes {
     background-color: rgb(237, 16, 64);
 }
 
 #no:hover span {
-    display:none
+    display: none;
 }
 
-#no:hover:before {
-    content:"Uff, You Girls 😑";
+#no:hover::before {
+    content: "Uff, You Girls 😑";
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Ajusta o título em telas menores */
+    }
+
+    img {
+        height: 300px; /* Ajusta a altura da imagem */
+    }
+
+    .buttons {
+        gap: 2rem;
+    }
+
+    .btn {
+        font-size: 1.1rem; /* Ajusta o tamanho do botão */
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Ajuste para telas muito pequenas */
+    }
+
+    img {
+        height: 250px; /* Ajuste para telas muito pequenas */
+    }
+
+    .buttons {
+        flex-direction: column; /* Empilha os botões em telas pequenas */
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 80%; /* Ajusta o tamanho do botão */
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+}
+
+/* Mudança de fundo quando clicado em "Não" */
 body.noo {
-    background-image: linear-gradient(0.25turn, #100716, #0e031f, #031d17,#250212, #181802);
+    background-image: linear-gradient(0.25turn, #100716, #0e031f, #031d17, #250212, #181802);
 }
 
+/* Marca d'água */
 .watermark {
     opacity: 0.5;
     color: rgb(243, 214, 214);
     position: fixed;
     top: 95%;
-    left: 47%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(243, 214, 214);
 }

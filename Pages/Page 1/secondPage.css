@@ -88,7 +88,7 @@ h1{
 }
 
 .beauti::before{
-    content: "Linda!!!!!!";
+    content: "LINDA!!!!!!";
     position: absolute;
     width: 0%;
     height: 100%;
@@ -98,7 +98,7 @@ h1{
     animation: slidein infinite 1.5s;
 }
 .gorg::before{
-    content: "Deslumbrante!!!!!!";
+    content: "DESLUMBRANTE!!!!!!";
     position: absolute;
     width: 0%;
     height: 100%;

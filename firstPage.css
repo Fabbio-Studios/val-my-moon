@@ -48,7 +48,7 @@ body.hovered {
 }
   
 .btn:hover:before {
-    content:"Amo Você! \1F49E ";
+    content:"Vamos lá \1F49E ";
 }
 
 .watermark {
